@@ -5,8 +5,16 @@ using namespace std;
 int maxOfArray(int a[], int n);
 
 int main() {
-    int a[] = {1,2,3,4,5};
-    cout << maxOfArray(a, 5);
+    int length;
+    int* arr;
+    cout << "Enter the value for length: ";
+    cin >> length;
+    arr = new int[length];
+    cout << "Enter the values for Array: " << endl;
+    for (int i = 0; i < length; i++) {
+        cin >> arr[i];
+    }
+    cout << "Max is : " << maxOfArray(arr, length);
 }
 
 int maxOfArray(int a[], int n) {
@@ -18,3 +26,4 @@ int maxOfArray(int a[], int n) {
     }
     return max;
 }
+
