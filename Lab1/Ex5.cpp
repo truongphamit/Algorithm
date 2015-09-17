@@ -2,19 +2,24 @@
 using namespace std;
 
 void sort(int a[], int n);
+void inputForArray(int a[], int n);
+void printArray(int a[], int n);
 
 int main() {
     int n;
+    int* a;
     cout << "Nhap n: ";
     cin >> n;
-    int a[n];
-    cout << "Nhap day: ";
+    a = new int[n];
+    inputForArray(a, n);
+    sort(a, n);
+    printArray(a, n);
+}
+
+void inputForArray(int a[], int n) {
+    cout << "Nhap day" << endl;
     for (int i = 0; i < n; i++) {
         cin >> a[i];
-    }
-    sort(a, n);
-    for (int i = 0; i < n; i++) {
-        cout << a[i] << " ";
     }
 }
 
@@ -27,5 +32,11 @@ void sort(int a[], int n) {
                 a[j] = x;
             }
         }
+    }
+}
+
+void printArray(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
     }
 }
