@@ -2,22 +2,23 @@
 using namespace std;
 
 bool check(int a[], int n);
+void inputForArray(int a[], int n);
 
 int main() {
-    int n;
-    cout << "Nhap n: ";
-    cin >> n;
-    int a[n];
-    cout << "Nhap day: ";
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-    if (check(a, n)) {
+    int length;
+    int* arr;
+    cout << "Nhap do dai day: ";
+    cin >> length;
+    arr = new int[length];
+    inputForArray(arr, length);
+    if (check(arr, length)) {
         cout << "La day tang dan";
     } else {
         cout << "Khong la day tang dan";
     }
 }
+
+ 
 
 bool check(int a[], int n) {
     bool check = true;
